@@ -7,7 +7,9 @@ setTimeout(()=>{
     console.log(socket.id);
 },1000);
 
-//hiding the chat section first , so that the user first enters the name
+//we are using jquery for dom manipulation
+
+//hiding the chat section first ,and just showing the login section so that the user first enters the name
 $('#chat').hide();
 
 
@@ -30,13 +32,18 @@ $('#login-btn').click(()=>{
 
 
 
-//we are using jquery for dom manipulation
+
 $('#send-btn').click(()=>{
     //emmiting an event on button click
     socket.emit('send-msg',{
 
         msg:$('#inp').val()
     })
+     
+    //now after writing the message in the input 
+    //it will be cleared after you send the message 
+    $('#inp').val("");
+
 })
 
 socket.on('received-msg', (data) => {

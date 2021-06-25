@@ -58,8 +58,9 @@ io.on('connection',(socket)=>{
 
 
 
-
-server.listen('3000',()=>{
+// this process.env.port  is for the deployemtn so that the deployement service
+//gives us the available port numnber
+server.listen(process.env.PORT||4444,()=>{
 
     console.log('Server running at Port 3000');
 })
