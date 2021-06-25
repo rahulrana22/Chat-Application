@@ -62,5 +62,5 @@ io.on('connection',(socket)=>{
 //gives us the available port numnber
 server.listen(process.env.PORT||4444,()=>{
 
-    console.log('Server running at Port 3000');
+    console.log('Server started running');
 })
